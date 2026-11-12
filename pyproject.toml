@@ -1,0 +1,12 @@
+[project]
+name = "recovering-neural-network-task"
+version = "0.1.0"
+description = "Recovering a neural network's classification task purely from its weights"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai>=1.0.0",
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+    "python-dotenv>=1.0.0",
+]

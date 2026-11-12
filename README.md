@@ -9,7 +9,8 @@ The network separates **primes plus zero, {0, 2, 3, 5, 7}**, from **{1, 4, 6, 8,
 
 - A single call to **GPT-6 Astra** recognised handwritten digits but guessed parity (4/10 digits correct).
 - **Claude agents** working blind concluded "0 vs. everything else".
-- After being told that each class has five digits, four Claude agents (three subagents each) produced candidates within one or two digits of the truth. Agent C's top pick was exact; the averaged final answer was {0, 2, 3, 6, 8}.
+- After being told that each class has five digits, four Claude agents (three subagents each) produced candidates within one or two digits of the truth. Agent C's top pick was exact; the averaged final answer was {0, 2, 3, 6, 8} (6/10, Brier 0.172).
+- Evaluating **Gemini 4 Carbon** (`carbon/`) across the same three regimes: a single call guessed "0 vs. 1", a blind agent deduced MNIST and proposed parity ({0, 2, 4, 6, 8}), and four hinted single agents averaged **{0, 2, 3, 6, 7}** (8/10 digits correct, Brier 0.156), resolving digit 7 via MNIST center-of-mass geometry while sharing the 5/6 swap.
 
 ## Repository layout
 
@@ -30,6 +31,10 @@ analysis/
   region_erasure.py    prints the region weight-votes and erasure table
   load.py, regions.py  shared helpers
 figures/               output of make_figures.py
+carbon/
+  run_carbon_eval.py   zero-leakage evaluation of Gemini 4 Carbon across all three regimes
+  make_carbon_figures.py  builds scoreboard and Brier probability comparison plots
+  responses/, figures/ API transcripts and comparison figures
 ```
 
 ## Running

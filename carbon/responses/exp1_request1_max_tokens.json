@@ -1,0 +1,32 @@
+{
+  "experiment": "exp1_single_call_astra_prompt",
+  "model": "gemini-4-carbon",
+  "settings": {
+    "thinking_level": "HIGH",
+    "include_thoughts": true,
+    "tools": [],
+    "max_output_tokens": 32768,
+    "temperature": 0.2
+  },
+  "preprocessing": {
+    "decimal_places": 6,
+    "char_length": 948829,
+    "raw_char_length": 1332066,
+    "max_logit_err_on_50_samples": 1.4534279092259794e-05,
+    "prediction_flips_on_50_samples": 0,
+    "gemini_input_tokens": 897119,
+    "raw_10dp_gemini_tokens": 1280356,
+    "raw_10dp_error": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'The input token count exceeds the maximum number of tokens allowed 1048576.', 'status': 'INVALID_ARGUMENT'}}"
+  },
+  "latency_seconds": 346.22,
+  "usage": {
+    "prompt_tokens": 897119,
+    "thoughts_tokens": 32765,
+    "output_tokens": 3,
+    "total_tokens": 929887,
+    "finish_reason": "FinishReason.MAX_TOKENS"
+  },
+  "thought_summary": "",
+  "visible_response": "",
+  "parsed_json": null
+}
