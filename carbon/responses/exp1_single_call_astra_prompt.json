@@ -1,0 +1,43 @@
+{
+  "experiment": "exp1_single_call_astra_prompt",
+  "model": "gemini-4-carbon",
+  "settings": {
+    "thinking_level": "LOW",
+    "include_thoughts": true,
+    "tools": [],
+    "max_output_tokens": 32768,
+    "temperature": 0.2,
+    "note": "Request 1 with thinking_level=HIGH used 32,765/32,768 tokens on thoughts and hit MAX_TOKENS (saved in exp1_request1_max_tokens.json, mirroring GPT-6 Astra Request 1)."
+  },
+  "preprocessing": {
+    "decimal_places": 6,
+    "char_length": 948829,
+    "raw_char_length": 1332066,
+    "max_logit_err_on_50_samples": 1.4534279092259794e-05,
+    "prediction_flips_on_50_samples": 0,
+    "gemini_input_tokens": 897119,
+    "raw_10dp_gemini_tokens": 1280356,
+    "raw_10dp_error": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'The input token count exceeds the maximum number of tokens allowed 1048576.', 'status': 'INVALID_ARGUMENT'}}"
+  },
+  "latency_seconds": 5089.47,
+  "usage": {
+    "prompt_tokens": 897119,
+    "thoughts_tokens": null,
+    "output_tokens": 546,
+    "total_tokens": 897665,
+    "finish_reason": "FinishReason.STOP"
+  },
+  "thought_summary": "",
+  "visible_response": "```json\n{\n  \"observations\": [\n    \"The provided class 1 example (28x28 grayscale) depicts a thick, slanted oval loop with an empty interior (e.g., high intensities around rows 5-22, zero intensity in the center at rows 11-17, cols 14-16), characteristic of a handwritten digit '0' from MNIST.\",\n    \"Strong class-1 hidden units, such as unit 13 (W2[0,13] = 0.9288) and unit 28 (W2[0,28] = 1.1748), have strongly negative weights in the central grid region (e.g., W1[13, 353] = -0.6035 at row 12, col 17; W1[28, 434] = -0.8835 at row 15, col 14) surrounded by positive weights forming an outer ring.\",\n    \"Strong class-0 hidden units, such as unit 12 (W2[0,12] = -0.9144), show the opposite spatial pattern: strong positive weights along a central vertical/diagonal stroke (e.g., W1[12, 323] = 0.3205 at row 11, col 15; W1[12, 352] = 0.3599 at row 12, col 16) and negative weights on the flanks, matching a handwritten '1'.\"\n  ],\n  \"reasoning\": \"The input format (28x28 grid divided by 255) and the visual structure of the labeled example clearly point to the MNIST handwritten digits domain. Class-1 detectors reward a bright outer loop and penalize center pixels, which strongly activates on '0' and is inhibited by central strokes. Conversely, class-0 detectors reward a narrow central vertical stroke, which is the defining feature of the digit '1'. While '0' vs 'all other digits' is a slight possibility, the specific narrow vertical-stroke detectors in negative W2 units strongly favor '1' as class 0.\",\n  \"hypothesis\": \"Binary classification of MNIST handwritten digits distinguishing digit '1' (class 0) from digit '0' (class 1).\",\n  \"confidence\": 0.92,\n  \"candidate_id\": null\n}\n```",
+  "parsed_json": {
+    "observations": [
+      "The provided class 1 example (28x28 grayscale) depicts a thick, slanted oval loop with an empty interior (e.g., high intensities around rows 5-22, zero intensity in the center at rows 11-17, cols 14-16), characteristic of a handwritten digit '0' from MNIST.",
+      "Strong class-1 hidden units, such as unit 13 (W2[0,13] = 0.9288) and unit 28 (W2[0,28] = 1.1748), have strongly negative weights in the central grid region (e.g., W1[13, 353] = -0.6035 at row 12, col 17; W1[28, 434] = -0.8835 at row 15, col 14) surrounded by positive weights forming an outer ring.",
+      "Strong class-0 hidden units, such as unit 12 (W2[0,12] = -0.9144), show the opposite spatial pattern: strong positive weights along a central vertical/diagonal stroke (e.g., W1[12, 323] = 0.3205 at row 11, col 15; W1[12, 352] = 0.3599 at row 12, col 16) and negative weights on the flanks, matching a handwritten '1'."
+    ],
+    "reasoning": "The input format (28x28 grid divided by 255) and the visual structure of the labeled example clearly point to the MNIST handwritten digits domain. Class-1 detectors reward a bright outer loop and penalize center pixels, which strongly activates on '0' and is inhibited by central strokes. Conversely, class-0 detectors reward a narrow central vertical stroke, which is the defining feature of the digit '1'. While '0' vs 'all other digits' is a slight possibility, the specific narrow vertical-stroke detectors in negative W2 units strongly favor '1' as class 0.",
+    "hypothesis": "Binary classification of MNIST handwritten digits distinguishing digit '1' (class 0) from digit '0' (class 1).",
+    "confidence": 0.92,
+    "candidate_id": null
+  }
+}
